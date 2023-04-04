@@ -1,0 +1,23 @@
+@import '../../assets/scss/consts.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .header__title {
+    @extend %title-h1;
+  }
+
+  .header__title_light {
+    color: $text-color-1;
+  }
+
+  .header__avatar {
+    width: 54px;
+    height: 54px;
+    background-repeat: no-repeat;
+    background-color: $white;
+    border-radius: 50%;
+  }
+}

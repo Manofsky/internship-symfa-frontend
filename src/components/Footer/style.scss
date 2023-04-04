@@ -1,0 +1,31 @@
+@import '../../assets/scss/consts.scss';
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, $background-color-1 13px, transparent 13px);
+
+  .footer__button {
+    position: absolute;
+    left: calc(50% - $side-cart-button-bg/2);
+    bottom: 27px;
+    width: $side-cart-button-bg;
+    height: $side-cart-button-bg;
+    border-radius: 50%;
+    background-color: $background-color-1;
+  }
+
+  .footer__navLeft {
+    width: 157px;
+    height: 62px;
+    background-color: $white;
+    border-radius: 0 20px 0 0;
+  }
+
+  .footer__navRight {
+    width: 156px;
+    height: 62px;
+    background-color: $white;
+    border-radius: 20px 0 0 0;
+  }
+}

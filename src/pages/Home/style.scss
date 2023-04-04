@@ -1,0 +1,18 @@
+@import '../../assets/scss/consts.scss';
+
+.home {
+  background: linear-gradient(to top, $white 62px, $background-color-1 62px);
+
+  .home__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 375px;
+    min-height: 100vh;
+  }
+
+  .home__header {
+    margin: 38px 39px 27px 33px;
+  }
+}
