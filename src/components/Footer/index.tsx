@@ -15,11 +15,11 @@ export default function Footer({ className }: Props) {
           <img src={ic_shopping_bag} alt="icon" />
         </button>
       </div>
-      <div className='footer__navLeft'>
+      <div className='footer__navBar footer__navBar_left'>
         <button className='footer__navBtn footer__navBtn_homeIcon footer__navBtn_active'></button>
         <button className='footer__navBtn footer__navBtn_bookIcon'></button>
       </div>
-      <div className='footer__navRight'>
+      <div className='footer__navBar footer__navBar_right'>
         <button className='footer__navBtn  footer__navBtn_bellIcon'></button>
         <button className='footer__navBtn  footer__navBtn_profileIcon'></button>
       </div>

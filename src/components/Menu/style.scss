@@ -1,0 +1,8 @@
+.menu {
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(2, 130px);
+  row-gap: 25px;
+  column-gap: 30px;
+}

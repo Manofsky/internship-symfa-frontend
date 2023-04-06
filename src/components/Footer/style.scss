@@ -27,25 +27,34 @@
     }
   }
 
-  .footer__navBtn {
-    margin-top: 16px;
-    padding: 0;
-    width: 22px;
-    height: 22px;
-    border: 0;
-    background: $background-icon-color-1;
-  }
-
-  .footer__navLeft {
+  .footer__navBar {
     display: flex;
-    justify-content: space-around;
-    margin-right: 62px;
+    gap: 45px;
     width: 156.5px;
     height: 62px;
     background-color: $white;
+
+    .footer__navBtn {
+      margin-top: 16px;
+      padding: 0;
+      width: 22px;
+      height: 22px;
+      border: 0;
+      background: $background-icon-color-1;
+    }
+
+    .footer__navBtn_active {
+      background: $background-color-orange-1;
+    }
+  }
+
+  .footer__navBar_left {
+    justify-content: flex-start;
+    margin-right: 62px;
     border-radius: 0 20px 0 0;
 
     .footer__navBtn_homeIcon {
+      margin-left: 40px;
       mask: url("../../assets/images/icons/ic_home_icon.svg") no-repeat center;
       -webkit-mask: url("../../assets/images/icons/ic_home_icon.svg") no-repeat center;
     }
@@ -56,12 +65,8 @@
     }
   }
 
-  .footer__navRight {
-    display: flex;
-    justify-content: space-around;
-    width: 156.5px;
-    height: 62px;
-    background-color: $white;
+  .footer__navBar_right {
+    justify-content: flex-end;
     border-radius: 20px 0 0 0;
 
     .footer__navBtn_bellIcon {
@@ -70,12 +75,9 @@
     }
 
     .footer__navBtn_profileIcon {
+      margin-right: 40px;
       mask: url("../../assets/images/icons/ic_profile.svg") no-repeat center;
       -webkit-mask: url("../../assets/images/icons/ic_profile.svg") no-repeat center;
     }
-  }
-
-  .footer__navBtn_active {
-    background: $background-color-orange-1;
   }
 }

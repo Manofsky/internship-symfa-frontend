@@ -8,10 +8,11 @@ $background-color-orange-1: #FDC27A;
 $background-icon-color-1: #ccc2c2;
 
 $side-cart-button-bg: 70px;
+$h1-line-height: 36px;
 
 %title-h1 {
   margin: 0;
   font-weight: 700;
   font-size: 24px;
-  line-height: 36px;
+  line-height: $h1-line-height;
 }
