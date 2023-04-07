@@ -1,27 +1,60 @@
 @import '../../assets/scss/consts.scss';
 
+.footer_light {
+  @include footer-background($background-color-light);
+
+  .footer__buttonWrapper {
+    background-color: $background-color-light;
+
+    .footer__buttonToCart {
+      border: 2px solid $white;
+    }
+  }
+
+  .footer__navBar {
+    background-color: $white;
+  }
+}
+
+.footer_dark {
+  @include footer-background($background-color-dark);
+
+  .footer__buttonWrapper {
+    background-color: $background-color-dark-2;
+
+    .footer__buttonToCart {
+      border: 2px solid $dark;
+    }
+  }
+
+  .footer__navBar {
+    background-color: $dark;
+  }
+}
+
 .footer {
   display: flex;
   justify-content: center;
-  background: linear-gradient(to bottom, $background-color-1 13px, transparent 13px);
+
+  @media (max-height: 785px) {
+    background: none;
+  }
 
   .footer__buttonWrapper {
     position: absolute;
     left: calc(50% - $side-cart-button-bg/2);
-    bottom: 27px;
+    bottom: #{$footer_middle_button_position_percentage}vh;
     display: flex;
     justify-content: center;
     align-items: center;
     width: $side-cart-button-bg;
     height: $side-cart-button-bg;
     border-radius: 50%;
-    background-color: $background-color-1;
 
     .footer__buttonToCart {
       width: 50px;
       height: 50px;
       box-sizing: border-box;
-      border: 2px solid $white;
       border-radius: 50%;
       background-color: $background-color-orange-1;
     }
@@ -31,11 +64,10 @@
     display: flex;
     gap: 45px;
     width: 156.5px;
-    height: 62px;
-    background-color: $white;
+    height: #{$footer_height_percentage}vh;
 
     .footer__navBtn {
-      margin-top: 16px;
+      margin-top: #{$footer__navBtn_margin-top_percentage}vh;
       padding: 0;
       width: 22px;
       height: 22px;

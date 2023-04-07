@@ -1,5 +1,25 @@
 @import '../../assets/scss/consts.scss';
 
+.header_light {
+  .header__title {
+    color: $text-color-light;
+  }
+
+  .header__avatar {
+    background-color: $black;
+  }
+}
+
+.header_dark {
+  .header__title {
+    color: $text-color-dark;
+  }
+
+  .header__avatar {
+    background-color: $white;
+  }
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -9,15 +29,12 @@
     @extend %title-h1;
   }
 
-  .header__title_light {
-    color: $text-color-1;
-  }
-
   .header__avatar {
+    padding: 0;
     width: 54px;
     height: 54px;
     background-repeat: no-repeat;
-    background-color: $white;
+    border: 0;
     border-radius: 50%;
   }
 }

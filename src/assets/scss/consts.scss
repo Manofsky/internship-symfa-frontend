@@ -1,18 +1,36 @@
 $white: #ffffff;
+$black: #000000;
+$dark: #26273B;
 
-$text-color-1: #104E5B;
+$text-color-light: #104E5B;
+$text-color-dark: #FDC27A;
 
-$background-color-1: #F2F6F7;
+$background-color-light: #F2F6F7;
+$background-color-dark: #232033;
+$background-color-dark-2: #2F3045;
 $background-color-orange-1: #FDC27A;
 
 $background-icon-color-1: #ccc2c2;
 
+$full_height_px: 787;
+$footer_height_px: 62;
+$footer_middle_button_position_px: 27;
+$footer__navBtn_margin-top_px: 16;
+
 $side-cart-button-bg: 70px;
 $h1-line-height: 36px;
+
+$footer_height_percentage: calc($footer_height_px * 100 / $full_height_px);
+$footer_middle_button_position_percentage: calc($footer_middle_button_position_px * 100 / $full_height_px);
+$footer__navBtn_margin-top_percentage: calc($footer__navBtn_margin-top_px * 100 / $full_height_px);
 
 %title-h1 {
   margin: 0;
   font-weight: 700;
   font-size: 24px;
   line-height: $h1-line-height;
+}
+
+@mixin footer-background($color) {
+  background: linear-gradient(to bottom, $color 13px, transparent 13px);
 }
