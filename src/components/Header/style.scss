@@ -24,6 +24,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 39px 0 33px;
+  height: calc($h1-line-height * 2 + 8.5vh);
 
   .header__title {
     @extend %title-h1;

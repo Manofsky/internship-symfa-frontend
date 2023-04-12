@@ -1,49 +1,23 @@
-@import '../../assets/scss/consts.scss';
+.main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 25px;
 
-.home_light {
-  background: linear-gradient(to top, #{$white} #{$footer_height_percentage}vh, #{$background-color-light} #{$footer_height_percentage}vh);
-}
+  .main__searchBar,
+  .main__filters {
+    margin-left: 33px;
+  }
 
-.home_dark {
-  background: linear-gradient(to top, #{$dark} #{$footer_height_percentage}vh, #{$background-color-dark} #{$footer_height_percentage}vh);
-}
+  .main__menu {
+    margin: 10px;
+    padding: 0;
+    max-height: calc(55vh);
+    overflow-y: scroll;
+  }
 
-.home {
-  .home__wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 0 auto;
-    max-width: 375px;
-    height: 100vh;
-
-    .home__header {
-      margin: 0 39px 0 33px;
-      height: calc($h1-line-height * 2 + 8.5vh);
-    }
-
-    .home__searchBar,
-    .home__filters {
-      margin-left: 33px;
-    }
-
-    .home__main {
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      margin-bottom: 25px;
-
-      .home__menu {
-        margin: 10px;
-        padding: 0;
-        max-height: calc(55vh);
-        overflow-y: scroll;
-      }
-
-      .home__menu::-webkit-scrollbar {
-        width: 0;
-      }
-    }
+  .main__menu::-webkit-scrollbar {
+    width: 0;
   }
 }

@@ -1,0 +1,20 @@
+@import '../../assets/scss/consts.scss';
+
+.themeWrapper_light {
+  background: linear-gradient(to top, #{$white} #{$footer_height_percentage}vh, #{$background-color-light} #{$footer_height_percentage}vh);
+}
+
+.themeWrapper_dark {
+  background: linear-gradient(to top, #{$dark} #{$footer_height_percentage}vh, #{$background-color-dark} #{$footer_height_percentage}vh);
+}
+
+.themeWrapper {
+  .pageWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 375px;
+    height: 100vh;
+  }
+}
