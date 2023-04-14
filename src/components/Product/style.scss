@@ -33,13 +33,16 @@
   justify-content: space-between;
   border-radius: 0 20px;
 
-  .product__img {
+  .product__imgContainer {
     position: relative;
-    margin-top: 12px;
-    width: 111px;
-    height: 87px;
-    background-color: $text-color-light;
-    border-radius: 0 15px;
+    display: flex;
+
+    .product__img {
+      margin-top: 12px;
+      width: 111px;
+      height: 87px;
+      border-radius: 0 15px;
+    }
 
     .product__favoritesBtn {
       position: absolute;
@@ -64,6 +67,7 @@
   }
 
   .product__title {
+    text-align: center;
     font-size: 14px;
     line-height: 21px;
     font-weight: bold;
