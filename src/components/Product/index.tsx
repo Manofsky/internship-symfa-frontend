@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './style.scss'
 import { useAppSelector } from '../../App/hooks'
 import { selectTheme } from '../../App/reducers/switchTheme'
@@ -12,6 +13,7 @@ type Props = {
 }
 
 export default function Product({ product }: Props) {
+  const navigate = useNavigate();
   const themeValue = useAppSelector(selectTheme);
   const [favorite, setFavorite] = useState(ic_favorite_unselected);
   const { data: image } = useGetSmallImageQuery(product.SmallImage);
@@ -23,10 +25,17 @@ export default function Product({ product }: Props) {
     });
   }
 
+  function openProduct(e: React.MouseEvent<HTMLElement>) {
+    e.preventDefault();
+    return navigate('details', { replace: false });
+  }
+
   return (
     <div className={`product product_${themeValue}`}>
       <div className='product__imgContainer'>
-        <img src={image} alt="img" className='product__img' />
+        <button className='product__imgButton' onClick={openProduct}>
+          <img src={image} alt="img" className='product__img' />
+        </button>
         <button className='product__favoritesBtn' onClick={addToFavorites}>
           <img src={favorite} alt="icon" />
         </button>

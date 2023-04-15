@@ -35,13 +35,19 @@
 
   .product__imgContainer {
     position: relative;
-    display: flex;
+    margin-top: 12px;
+    height: 87px;
 
-    .product__img {
-      margin-top: 12px;
-      width: 111px;
-      height: 87px;
-      border-radius: 0 15px;
+    .product__imgButton {
+      padding: 0;
+      border: 0;
+      background: none;
+
+      .product__img {
+        width: 111px;
+        height: 87px;
+        border-radius: 0 15px;
+      }
     }
 
     .product__favoritesBtn {

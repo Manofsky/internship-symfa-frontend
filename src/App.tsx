@@ -6,11 +6,13 @@ import Notification from './pages/Notification';
 import Profile from './pages/Profile';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import ProductDetails from './pages/ProductDetails';
 
 function App() {
   return (
     <Routes>
       <Route path='/' element={<Home />} />
+      <Route path='/details' element={<ProductDetails />} />
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<Signup />} />
       <Route path='/' element={<Home />} />
