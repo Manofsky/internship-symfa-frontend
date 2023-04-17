@@ -1,14 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
 import switchTheme from './reducers/switchTheme'
-import { api } from './reducers/api';
+import { goodsApi } from './reducers/goodsApi';
 
 export const store = configureStore({
   reducer: {
     switchTheme,
-    [api.reducerPath]: api.reducer,
+    [goodsApi.reducerPath]: goodsApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(api.middleware),
+    getDefaultMiddleware().concat(goodsApi.middleware),
 })
 
 export type RootState = ReturnType<typeof store.getState>;

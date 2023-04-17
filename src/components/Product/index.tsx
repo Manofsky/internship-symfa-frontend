@@ -6,7 +6,7 @@ import { selectTheme } from '../../App/reducers/switchTheme'
 import ic_favorite_unselected from '../../assets/images/icons/ic_favorite_unselected.svg'
 import ic_favorite_selected from '../../assets/images/icons/ic_favorite_selected.svg'
 import { IProduct } from '../../models/interfaces'
-import { useGetSmallImageQuery } from '../../App/reducers/api'
+import { useGetSmallImageQuery } from '../../App/reducers/goodsApi'
 
 type Props = {
   product: IProduct

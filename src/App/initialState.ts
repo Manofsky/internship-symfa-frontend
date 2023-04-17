@@ -1,7 +1,8 @@
-import { IThemeState } from "../models/interfaces";
+import { IInitialState } from "../models/interfaces";
 
-const initialState: IThemeState = {
-  theme: localStorage.theme || "light"
+const initialState: IInitialState = {
+  theme: localStorage.theme || "light",
+  user: null,
 };
 
 export default initialState;

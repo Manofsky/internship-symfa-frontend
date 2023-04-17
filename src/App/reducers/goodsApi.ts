@@ -1,22 +1,24 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { IProduct } from '../../models/interfaces'
 
-export const api = createApi({
-  reducerPath: 'api',
+const BASE_URL = process.env.REACT_APP_API_URL as string;
+
+export const goodsApi = createApi({
+  reducerPath: 'goodsApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: process.env.REACT_APP_API_URL
+    baseUrl: `${BASE_URL}/goods`
   }),
   endpoints: build => ({
     getAllProducts: build.query<IProduct[], void>({
-      query: () => 'goods'
+      query: () => '',
     }),
     getSmallImage: build.query<string, string>({
       query: (image) => ({
-        url: `goods/small/${image}`,
+        url: `small/${image}`,
         responseHandler: async (response) => response.url,
       }),
     })
   })
 });
 
-export const { useGetAllProductsQuery, useGetSmallImageQuery } = api;
+export const { useGetAllProductsQuery, useGetSmallImageQuery } = goodsApi;

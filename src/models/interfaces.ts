@@ -1,5 +1,19 @@
-export interface IThemeState {
-  theme: 'light' | 'dark'
+export interface IUser {
+  id: number;
+  email: string;
+  username: string;
+  password: string;
+  refreshToken: string;
+}
+
+export interface IGenericResponse {
+  status: string;
+  message: string;
+}
+
+export interface IInitialState {
+  theme: 'light' | 'dark';
+  user: IUser | null;
 }
 
 export interface IProduct {

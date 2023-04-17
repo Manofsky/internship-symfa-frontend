@@ -6,7 +6,7 @@ import SearchBar from '../../components/SearchBar';
 import Filters from '../../components/Filters';
 import Menu from '../../components/Menu';
 import PageWrapper from '../../components/PageWrapper';
-import { useGetAllProductsQuery } from '../../App/reducers/api';
+import { useGetAllProductsQuery } from '../../App/reducers/goodsApi';
 
 export default function Home() {
   const { data: goods = [] } = useGetAllProductsQuery();
