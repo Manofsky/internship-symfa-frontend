@@ -1,0 +1,27 @@
+@import '../../assets/scss/consts.scss';
+
+.login_light {
+  background: linear-gradient(to bottom, #{$white} #{$header_height_percentage}vh, #{$background-color-light} #{$header_height_percentage}vh);
+}
+
+.login_dark {
+  background: linear-gradient(to top, #{$dark} #{$header_height_percentage}vh, #{$background-color-dark} #{$header_height_percentage}vh);
+}
+
+.login {
+  .login__pageWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 375px;
+    height: 100vh;
+    border: red solid 1px; // remove
+
+    .login__form {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      padding: 20px;
+    }
+  }
+}

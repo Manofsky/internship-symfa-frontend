@@ -19,12 +19,14 @@ $background-icon-color-1: #ccc2c2;
 
 $full_height_px: 787;
 $footer_height_px: 62;
+$header_height_px: 322;
 $footer_middle_button_position_px: 27;
 $footer__navBtn_margin-top_px: 16;
 
 $side-cart-button-bg: 70px;
 $h1-line-height: 36px;
 
+$header_height_percentage: calc($header_height_px * 100 / $full_height_px);
 $footer_height_percentage: calc($footer_height_px * 100 / $full_height_px);
 $footer_middle_button_position_percentage: calc($footer_middle_button_position_px * 100 / $full_height_px);
 $footer__navBtn_margin-top_percentage: calc($footer__navBtn_margin-top_px * 100 / $full_height_px);

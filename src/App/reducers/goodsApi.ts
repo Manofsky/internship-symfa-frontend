@@ -6,7 +6,8 @@ const BASE_URL = process.env.REACT_APP_API_URL as string;
 export const goodsApi = createApi({
   reducerPath: 'goodsApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: `${BASE_URL}/goods`
+    baseUrl: `${BASE_URL}/goods`,
+    credentials: 'include',
   }),
   endpoints: build => ({
     getAllProducts: build.query<IProduct[], void>({
