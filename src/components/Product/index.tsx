@@ -7,7 +7,6 @@ import ic_favorite_unselected from '../../assets/images/icons/ic_favorite_unsele
 import ic_favorite_selected from '../../assets/images/icons/ic_favorite_selected.svg'
 import { IProduct } from '../../models/interfaces'
 import { useGetSmallImageQuery } from '../../App/api/goodsApi'
-import FullScreenLoader from '../FullScreenLoader'
 
 type Props = {
   product: IProduct
@@ -17,8 +16,7 @@ export default function Product({ product }: Props) {
   const navigate = useNavigate();
   const themeValue = useAppSelector(selectTheme);
   const [favorite, setFavorite] = useState(ic_favorite_unselected);
-  const { data: image, isLoading, isFetching } = useGetSmallImageQuery(product.SmallImage);
-  if (isLoading || isFetching) return <FullScreenLoader />
+  const { data: image } = useGetSmallImageQuery(product.SmallImage);
 
   function addToFavorites(e: React.MouseEvent<HTMLElement>) {
     e.preventDefault();

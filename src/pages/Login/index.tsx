@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './style.scss';
-import { useAppDispatch, useAppSelector } from '../../App/hooks';
+import { useAppSelector } from '../../App/hooks';
 import { selectTheme } from '../../App/reducers/switchTheme';
 import { useLoginMutation } from '../../App/api/authApi';
-// import { userEmailSlice } from '../../App/reducers/userEmailSlice';
 
 export default function Login() {
   const navigate = useNavigate();
   const location = useLocation();
-  const dispatch = useAppDispatch();
   const themeValue = useAppSelector(selectTheme);
 
   const defaultValue = {
@@ -18,12 +16,17 @@ export default function Login() {
   };
   const [loginData, setLoginData] = useState(defaultValue);
 
-  const [login] = useLoginMutation();
+  const [login, { isSuccess }] = useLoginMutation();
+
+  const fromPage = location.state?.from?.pathname || '/';
+
+  useEffect(() => {
+    if (isSuccess) return navigate(fromPage);
+  })
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     login(loginData);
-    return navigate('/');
   };
 
   return (

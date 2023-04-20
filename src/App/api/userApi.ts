@@ -1,18 +1,22 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi } from '@reduxjs/toolkit/query/react';
 import { setUser } from '../reducers/userSlice';
 import { IUser } from '../../models/interfaces';
-
-const BASE_URL = process.env.REACT_APP_API_URL as string;
+import customFetchBase from './customFetchBase';
 
 export const userApi = createApi({
   reducerPath: 'userApi',
-  baseQuery: fetchBaseQuery({
-    baseUrl: `${BASE_URL}/users`,
-    credentials: 'include',
-  }),
+  baseQuery: customFetchBase,
   endpoints: (build) => ({
     getUserByEmail: build.query<IUser, string | undefined>({
-      query: (email) => `${email}`,
+      query: (email) => {
+        return {
+          url: `users/${email}`,
+          credentials: 'include',
+        };
+      },
+      transformErrorResponse: (response: any) => {
+        return response.data.message;
+      },
       async onQueryStarted(args, { dispatch, queryFulfilled }) {
         try {
           const { data } = await queryFulfilled;

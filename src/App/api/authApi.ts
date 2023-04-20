@@ -27,10 +27,7 @@ export const authApi = createApi({
         } catch (error) { }
       },
     }),
-    refresh: build.query<any, void>({
-      query: () => 'refresh',
-    }),
   })
 });
 
-export const { useLoginMutation, useRefreshQuery } = authApi;
+export const { useLoginMutation } = authApi;
