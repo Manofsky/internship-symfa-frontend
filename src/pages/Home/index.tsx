@@ -6,10 +6,12 @@ import SearchBar from '../../components/SearchBar';
 import Filters from '../../components/Filters';
 import Menu from '../../components/Menu';
 import PageWrapper from '../../components/PageWrapper';
-import { useGetAllProductsQuery } from '../../App/reducers/goodsApi';
+import { useGetAllProductsQuery } from '../../App/api/goodsApi';
+import FullScreenLoader from '../../components/FullScreenLoader';
 
 export default function Home() {
-  const { data: goods = [] } = useGetAllProductsQuery();
+  const { data: goods = [], isLoading, isFetching } = useGetAllProductsQuery();
+  if (isLoading || isFetching) return <FullScreenLoader />
 
   return (
     <PageWrapper>

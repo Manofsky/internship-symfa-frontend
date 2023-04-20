@@ -14,3 +14,14 @@ export interface IProduct {
   SmallImage: string;
   BigImage: string;
 }
+
+export interface IUser {
+  id: number;
+  email: string;
+  username: string;
+  password: string;
+  refreshToken: string;
+}
+
+export type TLogin = Pick<IUser, 'email' | 'password'>;
+

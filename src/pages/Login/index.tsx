@@ -1,26 +1,29 @@
-import React, { useState } from 'react'
-import './style.scss'
-import { useAppSelector } from '../../App/hooks';
+import React, { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import './style.scss';
+import { useAppDispatch, useAppSelector } from '../../App/hooks';
 import { selectTheme } from '../../App/reducers/switchTheme';
-import { useLoginMutation } from '../../App/reducers/authApi';
+import { useLoginMutation } from '../../App/api/authApi';
+// import { userEmailSlice } from '../../App/reducers/userEmailSlice';
 
 export default function Login() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const dispatch = useAppDispatch();
   const themeValue = useAppSelector(selectTheme);
 
   const defaultValue = {
     email: '',
     password: ''
   };
-
-  const [data, setData] = useState(defaultValue);
+  const [loginData, setLoginData] = useState(defaultValue);
 
   const [login] = useLoginMutation();
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    login(data).then(() => {
-      setData(defaultValue)
-    });
+    login(loginData);
+    return navigate('/');
   };
 
   return (
@@ -34,8 +37,8 @@ export default function Login() {
               <input
                 type="text"
                 name="login"
-                value={data.email}
-                onChange={(e) => setData({ ...data, email: e.target.value })} />
+                value={loginData.email}
+                onChange={(e) => setLoginData({ ...loginData, email: e.target.value })} />
             </label>
 
             <label>
@@ -43,8 +46,8 @@ export default function Login() {
               <input
                 type="password"
                 name="password"
-                value={data.password}
-                onChange={(e) => setData({ ...data, password: e.target.value })} />
+                value={loginData.password}
+                onChange={(e) => setLoginData({ ...loginData, password: e.target.value })} />
             </label>
 
             <button type='submit'>Login</button>

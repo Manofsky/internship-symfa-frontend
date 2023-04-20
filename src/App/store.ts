@@ -1,16 +1,20 @@
-import { configureStore } from '@reduxjs/toolkit'
-import switchTheme from './reducers/switchTheme'
-import { goodsApi } from './reducers/goodsApi';
-import { authApi } from './reducers/authApi';
+import { configureStore } from '@reduxjs/toolkit';
+import switchTheme from './reducers/switchTheme';
+import userSlice from './reducers/userSlice';
+import { goodsApi } from './api/goodsApi';
+import { authApi } from './api/authApi';
+import { userApi } from './api/userApi';
 
 export const store = configureStore({
   reducer: {
     switchTheme,
+    userSlice,
+    [userApi.reducerPath]: userApi.reducer,
     [authApi.reducerPath]: authApi.reducer,
     [goodsApi.reducerPath]: goodsApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat([authApi.middleware, goodsApi.middleware]),
+    getDefaultMiddleware().concat([userApi.middleware, authApi.middleware, goodsApi.middleware]),
 })
 
 export type RootState = ReturnType<typeof store.getState>;
