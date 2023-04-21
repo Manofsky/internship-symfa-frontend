@@ -21,8 +21,10 @@ const PrivateRoute = () => {
 
   return (user || cookies.logged_in) ? (
     <Outlet />
+  ) : (!user && !cookies.logged_in) ? (
+    <Navigate to='auth/signup' state={{ from: location }} replace />
   ) : (
-    <Navigate to='/login' state={{ from: location }} replace />
+    <Navigate to='auth/login' state={{ from: location }} replace />
   );
 };
 

@@ -4,8 +4,9 @@ import Home from './pages/Home';
 import Favourites from './pages/Favourites';
 import Notification from './pages/Notification';
 import Profile from './pages/Profile';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
+import Auth from './pages/Auth';
+import Login from './components/Login';
+import Signup from './components/Signup';
 import ProductDetails from './pages/ProductDetails';
 import PrivateRoute from './routes/PrivateRoute';
 
@@ -21,8 +22,10 @@ function App() {
         <Route path='/profile' element={<Profile />} />
       </Route>
 
-      <Route path='/login' element={<Login />} />
-      <Route path='/signup' element={<Signup />} />
+      <Route path='/auth' element={<Auth />}>
+        <Route path='login' element={<Login />} />
+        <Route path='signup' element={<Signup />} />
+      </Route>
       <Route path='*' element={<Navigate to='/' />} />
     </Routes>
   )
