@@ -1,19 +1,20 @@
 import { useCookies } from 'react-cookie';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import FullScreenLoader from '../components/FullScreenLoader';
-import { useGetUserByEmailQuery } from '../App/api/userApi';
+import { useGetMeQuery } from '../App/api/userApi';
 import { useAppSelector } from '../App/hooks';
 import { getUser } from '../App/reducers/userSlice';
 
 const PrivateRoute = () => {
   const [cookies] = useCookies(['logged_in']);
   const location = useLocation();
-  const user = useAppSelector(getUser);
-  const { isLoading, isFetching } = useGetUserByEmailQuery(user?.email, {
+  const { isLoading, isFetching } = useGetMeQuery(null, {
     refetchOnMountOrArgChange: true,
-    selectFromResult: (data) => data,
   });
   const loading = isLoading || isFetching;
+
+  const user = useAppSelector(getUser);
+
   if (loading) {
     return <FullScreenLoader />;
   }
@@ -21,7 +22,7 @@ const PrivateRoute = () => {
   return (user || cookies.logged_in) ? (
     <Outlet />
   ) : (
-    <Navigate to='/login' state={{ from: location }} />
+    <Navigate to='/login' state={{ from: location }} replace />
   );
 };
 

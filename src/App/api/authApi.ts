@@ -22,7 +22,7 @@ export const authApi = createApi({
         try {
           const { data } = await queryFulfilled;
           if (data === 'ok') {
-            dispatch(userApi.endpoints.getUserByEmail.initiate(args.email));
+            dispatch(userApi.endpoints.getMe.initiate(null));
           }
         } catch (error) { }
       },

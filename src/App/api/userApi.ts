@@ -7,15 +7,12 @@ export const userApi = createApi({
   reducerPath: 'userApi',
   baseQuery: customFetchBase,
   endpoints: (build) => ({
-    getUserByEmail: build.query<IUser, string | undefined>({
-      query: (email) => {
+    getMe: build.query<IUser, null>({
+      query: () => {
         return {
-          url: `users/${email}`,
+          url: 'users/me',
           credentials: 'include',
         };
-      },
-      transformErrorResponse: (response: any) => {
-        return response.data.message;
       },
       async onQueryStarted(args, { dispatch, queryFulfilled }) {
         try {
@@ -27,4 +24,4 @@ export const userApi = createApi({
   }),
 });
 
-export const { useGetUserByEmailQuery } = userApi;
+export const { useGetMeQuery } = userApi;
