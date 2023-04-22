@@ -1,9 +1,113 @@
 @import '../../assets/scss/consts.scss';
 
+.auth_light {
+  background: linear-gradient(to bottom, #{$white} #{$header_height_percentage}vh, #{$background-color-light} #{$header_height_percentage}vh);
+
+  .authHeader__title {
+    color: $text-color-light;
+  }
+
+  .authHeader__subtitle {
+    color: $text-color-1;
+  }
+
+  .authHeader__link {
+    color: $text-color-light-2;
+  }
+}
+
+.auth_dark {
+  background: linear-gradient(to bottom, #{$dark} #{$header_height_percentage}vh, #{$background-color-dark} #{$header_height_percentage}vh);
+
+  .authHeader__title {
+    color: $text-color-dark-3;
+  }
+
+  .authHeader__subtitle {
+    color: $text-color-dark-4;
+  }
+
+  .authHeader__link {
+    color: $text-color-dark;
+  }
+}
+
 .auth {
-  &__header {
+  &__pageWrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin: 0 auto;
+    max-width: 375px;
+    height: 100vh;
+
+    .authHeader {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 23px;
+      align-items: center;
+      height: #{$header_height_percentage}vh;
+
+      @media (max-height: 650px) {
+        gap: 0;
+      }
+
+      &__icon {
+        display: flex;
+        align-items: flex-end;
+        flex-grow: 5.5;
+        margin: 0;
+        padding: 0;
+        background: none;
+        border: none;
+      }
+
+      &__heading {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+      &__title {
+        margin: 0;
+        font-size: 28px;
+        line-height: 28px;
+      }
+
+      &__subtitle {
+        margin: 0;
+        line-height: 28px;
+      }
+
+      &__nav {
+        flex-grow: 2;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+
+      &__linkWrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        margin: 0 9.5px;
+        width: 131px;
+        border-bottom: transparent 2px solid;
+      }
+
+      &__linkWrap_active {
+        border-color: $orange;
+      }
+
+      &__link {
+        font-size: 18px;
+        line-height: 27px;
+        font-weight: 400;
+        text-decoration: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
+    }
   }
 }

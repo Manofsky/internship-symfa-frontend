@@ -1,13 +1,21 @@
 $white: #ffffff;
 $black: #000000;
 $dark: #26273B;
+$orange: #FDC27A;
+$color-1: #c0b9b9;
+$color-2: #104E5B;
+$color-3: #2F3045;
 
 $text-color-1: #616F80;
 $text-color-2: #99C932;
 
 $text-color-light: #104E5B;
+$text-color-light-2: #2B2D33;
 $text-color-dark: #FDC27A;
 $text-color-dark-2: #D1D1D1;
+$text-color-dark-3: #F2F6F7;
+$text-color-dark-4: #A09FA3;
+$text-color-dark-5: #C9CACA;
 
 $background-color-light: #F2F6F7;
 $background-color-dark: #232033;
@@ -20,6 +28,8 @@ $background-icon-color-1: #ccc2c2;
 $full_height_px: 787;
 $footer_height_px: 62;
 $header_height_px: 322;
+$auth_forms_height_px: 465;
+$login_button_margin-bottom_px: 52;
 $footer_middle_button_position_px: 27;
 $footer__navBtn_margin-top_px: 16;
 
@@ -27,6 +37,8 @@ $side-cart-button-bg: 70px;
 $h1-line-height: 36px;
 
 $header_height_percentage: calc($header_height_px * 100 / $full_height_px);
+$auth_forms_height_percentage: calc($auth_forms_height_px * 100 / $full_height_px);
+$login_button_margin-bottom_percentage: calc($login_button_margin-bottom_px * 100 / $full_height_px);
 $footer_height_percentage: calc($footer_height_px * 100 / $full_height_px);
 $footer_middle_button_position_percentage: calc($footer_middle_button_position_px * 100 / $full_height_px);
 $footer__navBtn_margin-top_percentage: calc($footer__navBtn_margin-top_px * 100 / $full_height_px);
