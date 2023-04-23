@@ -64,7 +64,7 @@ export default function Login() {
             required
             value={loginData.password}
             onChange={(e) => setLoginData({ ...loginData, password: e.target.value })} />
-          <button onClick={togglePassInput} className='loginForm__toggle'>
+          <button type="button" onClick={togglePassInput} className='loginForm__toggle'>
             {visibility ? <VisibilityIcon /> : <VisibilityOffIcon />}
           </button>
         </label>

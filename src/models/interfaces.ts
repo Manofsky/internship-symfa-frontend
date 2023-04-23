@@ -23,5 +23,7 @@ export interface IUser {
   refreshToken?: string;
 }
 
+export type TSignup = Pick<IUser, 'email' | 'username' | 'password'>;
+
 export type TLogin = Pick<IUser, 'email' | 'password'>;
 
